@@ -1,0 +1,32 @@
+server:
+  port: 12000
+
+
+
+spring:
+  datasource:
+    dynamic:
+      primary: anydoor
+      strict: false
+      datasource:
+        anydoor:
+          url:
+          username: root
+          password:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        user:
+          url:
+          username: root
+          password:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    default-property-inclusion: non_null
+
+
+
+mybatis:
+  type-aliases-package: com.anydoortrip.anydoortrip.apps.area.pojo,com.anydoortrip.anydoortrip.apps.hotel.responseData
+  configuration:
+    call-setters-on-nulls: false
+  mapper-locations: classpath:mapper/*.xml
+
